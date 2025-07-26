@@ -12,12 +12,20 @@
 	z-index: -1;
 }
 
+// Ensure body is visible on homepage
+body.bg-black {
+	opacity: 1 !important;
+	visibility: visible !important;
+}
+
 #homepage {
 	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
 	background: linear-gradient(135deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.7) 100%);
 	color: white;
+	opacity: 1 !important; // Force visibility
+	visibility: visible !important;
 
 	.homepage-header-container {
 		padding: 2rem 0 1rem;
@@ -32,6 +40,8 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
+		opacity: 1 !important;
+		visibility: visible !important;
 	}
 
 	.homepage-header {
