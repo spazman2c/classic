@@ -10,6 +10,8 @@
 	},
 	"scripts": {
 		"build": "bazel build //...",
+		"build:pages": "npm run proto:generate && npx vite build",
+		"proto:generate": "npx protoc --ts_opt generate_dependencies --ts_out ui/core/proto --proto_path proto proto/api.proto && npx protoc --ts_out ui/core/proto --proto_path proto proto/test.proto && npx protoc --ts_out ui/core/proto --proto_path proto proto/ui.proto && for file in proto/*.proto; do npx protoc --ts_out ui/core/proto --proto_path proto \"$file\"; done",
 		"test": "bazel test //...",
 		"format": "npm run lint:fix && npm run prettier:fix",
 		"lint": "npm run lint:js && npm run lint:css",
