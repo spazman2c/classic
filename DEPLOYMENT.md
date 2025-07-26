@@ -18,7 +18,7 @@ npm run build:pages
 ```
 
 This will:
-- Generate all protobuf TypeScript files
+- Generate all protobuf TypeScript files (if protobuf is available)
 - Build the Vite application for production
 - Create optimized static files in `dist/classic/`
 
@@ -42,7 +42,7 @@ This will:
 
 4. **Configure build settings**
    - **Project name**: `wowsim-classic` (or your preferred name)
-   - **Production branch**: `main` (or your default branch)
+   - **Production branch**: `master` (or your default branch)
    - **Framework preset**: `None`
    - **Build command**: `npm run build:pages`
    - **Build output directory**: `dist/classic`
@@ -114,7 +114,7 @@ The built site will have the following structure:
 ### Build Issues
 - Ensure Node.js version 20+ is used
 - Check that all dependencies are installed: `npm install`
-- Verify protobuf compiler is installed: `brew install protobuf`
+- The build script handles protobuf availability automatically
 
 ### Routing Issues
 - The `_redirects` file handles client-side routing

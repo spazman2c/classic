@@ -2,44 +2,165 @@
 
 .sim-link {
 	display: flex;
+	text-decoration: none;
+	color: inherit;
 
 	&:hover,
 	&.show {
-		background-color: rgba(0, 0, 0, 0.5);
+		text-decoration: none;
+		color: inherit;
 	}
 
 	.sim-link-content {
-		padding: var(--spacer-2);
+		padding: 1.5rem;
 		display: flex;
 		align-items: center;
+		gap: 1rem;
+		width: 100%;
 
 		.sim-link-icon {
-			width: 3rem;
-			height: 3rem;
-			margin-right: var(--spacer-2);
-			border-width: 2px;
-			border-style: solid;
-			border-radius: 100%;
+			width: 3.5rem;
+			height: 3.5rem;
+			border-radius: 12px;
+			box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+			transition: transform 0.3s ease;
+			flex-shrink: 0;
 		}
 
-		.sim-link-label,
-		.launch-status-label {
-			font-size: 0.75rem;
-			font-weight: normal;
-			white-space: nowrap;
+		.sim-link-label {
+			font-size: 0.875rem;
+			font-weight: 500;
+			color: #a8b2d1;
+			text-transform: uppercase;
+			letter-spacing: 0.5px;
+			margin: 0;
 		}
 
 		.sim-link-title {
-			font-size: 1.25rem;
-			font-weight: bold;
-			white-space: nowrap;
+			font-size: 1.5rem;
+			font-weight: 700;
+			color: #fff;
+			margin: 0.25rem 0;
+			line-height: 1.2;
+		}
+
+		.launch-status-label {
+			font-size: 0.875rem;
+			font-weight: 500;
+			color: #10b981;
+			background: rgba(16, 185, 129, 0.1);
+			padding: 0.25rem 0.75rem;
+			border-radius: 20px;
+			display: inline-block;
+			margin-top: 0.5rem;
+			border: 1px solid rgba(16, 185, 129, 0.2);
 		}
 	}
 }
 
 .sim-link-dropdown {
 	.dropdown-menu {
-		background: rgba(0, 0, 0, 0.5);
+		background: rgba(0, 0, 0, 0.9);
+		border: 1px solid rgba(255, 255, 255, 0.1);
+		border-radius: 12px;
+		backdrop-filter: blur(10px);
+		box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+		margin-top: 0.5rem;
+
+		.dropdown-item {
+			color: #e2e8f0;
+			padding: 1rem 1.5rem;
+			transition: all 0.3s ease;
+			border-radius: 8px;
+			margin: 0.25rem;
+
+			&:hover {
+				background: rgba(255, 255, 255, 0.1);
+				color: #fff;
+				transform: translateX(4px);
+			}
+
+			&:first-child {
+				margin-top: 0.5rem;
+			}
+
+			&:last-child {
+				margin-bottom: 0.5rem;
+			}
+		}
+	}
+}
+
+// Class-specific colors
+.text-priest {
+	.sim-link-content {
+		.sim-link-icon {
+			border: 2px solid #fefefe;
+		}
+	}
+}
+
+.text-druid {
+	.sim-link-content {
+		.sim-link-icon {
+			border: 2px solid #ff7d0a;
+		}
+	}
+}
+
+.text-rogue {
+	.sim-link-content {
+		.sim-link-icon {
+			border: 2px solid #fff569;
+		}
+	}
+}
+
+.text-hunter {
+	.sim-link-content {
+		.sim-link-icon {
+			border: 2px solid #abd473;
+		}
+	}
+}
+
+.text-shaman {
+	.sim-link-content {
+		.sim-link-icon {
+			border: 2px solid #0070de;
+		}
+	}
+}
+
+.text-mage {
+	.sim-link-content {
+		.sim-link-icon {
+			border: 2px solid #69ccf0;
+		}
+	}
+}
+
+.text-warrior {
+	.sim-link-content {
+		.sim-link-icon {
+			border: 2px solid #c79c6e;
+		}
+	}
+}
+
+.text-warlock {
+	.sim-link-content {
+		.sim-link-icon {
+			border: 2px solid #9482c9;
+		}
+	}
+}
+
+.text-paladin {
+	.sim-link-content {
+		.sim-link-icon {
+			border: 2px solid #f58cba;
+		}
 	}
 }
 
@@ -49,6 +170,23 @@
 			position: relative !important;
 			inset: 0 !important;
 			transform: none !important;
+		}
+	}
+}
+
+@include media-breakpoint-down(md) {
+	.sim-link {
+		.sim-link-content {
+			padding: 1.25rem;
+
+			.sim-link-icon {
+				width: 3rem;
+				height: 3rem;
+			}
+
+			.sim-link-title {
+				font-size: 1.25rem;
+			}
 		}
 	}
 }
